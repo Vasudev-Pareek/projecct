@@ -4,27 +4,38 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'open sans', sans-serif;
-  /* font-family: "Roboto", sans-serif; */
+}
+html{
+  scroll-behavior: smooth;
 }
 
 body{
     color: rgba(255, 255, 255, 0.4);
     background: #222;
-    /* background: #6C757D; */
     line-height: 1.7;
     font-size: 16px;
     font-weight: 300;
+    overflow-x: hidden;
+    animation: Smoke 2s linear 1;
 }
 :root{
     --Text-color1:#bac964;
-    /* --Text-color2:#bac964; */
-    /* --bg-color1:#333; */
     --box-bgcolor:#2d2c2c;
     --download-bgcolor:#6c757d;
     --boxdark-bgcolor:#55595d;
     --primary-Color:#bac964;
     --secondary-Color:#6c757d;
     --grey-Color:#6c757d;
+    --buttonBG-color:#008080;
+}
+
+@keyframes Smoke {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }
 /* flex class for reuse */
 .flex-complete{
@@ -53,8 +64,10 @@ nav {
   align-items: center;
   justify-content: center;
   padding: 0 3rem;
-  /* background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px); */
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  z-index: 99;
 }
 nav .links {
   display: flex;
@@ -65,14 +78,9 @@ nav .links {
 /* link line hover */
 .link {
   position: relative;
-  /* color: #8BE3F3; */
-  /* color: #212424; */
-  /* color: #606163; */
-  /* color: #33ffd8; */
-  /* color: #ff4321; */
-  /* color: #E7E8D8; */
   color: #eeedeb;
 }
+
 .link::after {
   content: "";
   position: absolute;
@@ -92,8 +100,9 @@ nav .links {
 }
 /* end here */
 
+
 .action_btn {
-  background-color: #bac964;
+  background-color: #008080;
   color: #212529;
   color: white;
   border-radius: 10px;
@@ -101,7 +110,6 @@ nav .links {
   font-size: 1rem;
   border: 0;
   outline: 0;
-  /* font-weight: bold; */
   cursor: pointer;
   transition: all 0.5s ease;
   letter-spacing: 1px;
@@ -109,8 +117,7 @@ nav .links {
 
 .action_btn:hover {
   scale: 1.05;
-  /* color: #333; */
-  color: white;
+  color: #66CCCC;
   border: 1px solid #fff;
   background-color: transparent;
 }
@@ -125,6 +132,7 @@ nav .links {
   color: white;
   font-size: 2.5rem;
   cursor: pointer;
+  z-index: 999;
 }
 
 /* Header */
@@ -132,18 +140,17 @@ header {
   font-family: "Roboto", sans-serif;
   position: relative;
   width: 100%;
-  height: 110vh;
-  padding: 0 2rem;
+  height: 120vh;
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
-    url(Images/photo_5.jpg);
+    url(Images/img5grey.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   text-align: center;
+  z-index: 99;
 }
 
 .dropdown_bar {
-  display: none;
   display: none;
   position: absolute;
   right: 2rem;
@@ -156,13 +163,24 @@ header {
   overflow: hidden;
   box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.5),
     0px 0px 10px rgba(255, 255, 255, 0.8);
-  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.75);
 }
+
 .open {
   display: block;
-  /* height: 300px; */
   height: 350px;
+  animation-name: slowSpin;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
 }
+@keyframes slowSpin {
+  0%{
+    height: 0;
+  }
+  100%{
+    height: 350px;
+  }
+}
+
 .dropdown_bar li {
   padding: 0.7rem;
   display: flex;
@@ -186,14 +204,9 @@ header .intro {
   color: white;
   text-align: center;
   position: relative;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* line-height: 100px; */
-  /* font-size: 3rem; */
-  /* font-family: "Roboto", sans-serif; */
-  /* font-weight: 100; */
-  /* font-style:italic; */
   font: italic 3.4vw "Roboto", sans-serif;
 }
 header .intro p:first-child {
@@ -201,6 +214,13 @@ header .intro p:first-child {
 }
 header .intro p:nth-child(3) {
   font-size: 1.9vw;
+}
+header .intro h2 {
+ transition: color 0.5s ease;
+}
+header .intro h2:hover {
+  cursor: pointer;
+ color: var(--buttonBG-color);
 }
 
 /* My Resume section ---------- */
@@ -223,24 +243,18 @@ header .intro p:nth-child(3) {
   height: 100%;
   text-align: center;
   color: white;
-  /* padding: 2rem; */
   display: flex;
   text-align: center;
   justify-content: center;
-  /* width: fit-content; */
 }
 
 
 .Edu-Certi {
   max-width: 75%;
-  /* margin: 0 auto; */
-  /* padding: 2rem; */
   margin-top: 50px;
   text-align: left;
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: center; */
-  /* align-items: center; */
   gap: 24px; /* Add some gap between flex items */
 }
 
@@ -249,8 +263,6 @@ header .intro p:nth-child(3) {
   display: flex;
   flex-direction: column;
   gap: 24px; /* Add some gap between flex items */
-   /*max-height: 600px;Agar layout kharab ho raha ho responsive me to isee hata dena bhai*/
-  /* overflow-y: auto;  */
 }
 
 .Education h2 {
@@ -266,9 +278,7 @@ header .intro p:nth-child(3) {
   gap: 15px;
   padding: 30px;
   border-radius: 10px;
-  background-color: var(--box-bgcolor);
- /* box-sizing: border-box;  Ensure padding and border are included in the width */
-  
+  background-color: var(--box-bgcolor);  
 }
 
 .Edu-Box span:last-child {
@@ -288,12 +298,10 @@ header .intro p:nth-child(3) {
 }
 
 .Download {
-  /* margin-left: 90px; */
   background-color: var(--download-bgcolor);
 }
 
 .Download:hover {
-  /* margin-left: 90px; */
   color: white;
 }
 
@@ -311,41 +319,39 @@ header .intro p:nth-child(3) {
 
 /* About Me Section -------------------------*/
 .aboutMe{
-  /* height: 700px; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 1rem 0 3rem 0 ;
+  padding: 6rem 0 4rem 0 ;
 }
 .aboutBox{
   width: 75vw;
   display: flex;
   justify-content: center;
   gap: 40px;
-  /* flex-wrap: wrap; */
 }
-.aboutBox .about1 img{
+
+.aboutBox .about1 .aboutImg{
   width: 450px;
   height: 400px;
   border-radius: 15px;
+  /* background: url(Images/img6Grey.jpg) center center/cover no-repeat; */
+  background: url(Images/img6.jpg) center center/cover no-repeat;
+  transition: all 1s ease-in-out;
+  filter: grayscale(100%);
 }
-/* .aboutBox .about{
-  width: 49%;
-} */
+.aboutBox .about1 .aboutImg:hover{
+  filter: grayscale(0%);
+}
 .aboutBox .about1{
   margin: 0px auto;
 }
 .aboutBox .about2{
-  /* width: 60%; */
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-
-/* .aboutBox.about2{
-  background: red;
-} */
 
 .FlexFix{
   display: flex;
@@ -368,9 +374,7 @@ header .intro p:nth-child(3) {
 }
 
 .MySkill-section{
-  /* height: 700px; */
   height: 100%;
-  /* padding: 8rem; */
   color: white;
   display: flex;
   justify-content: center;
@@ -382,7 +386,6 @@ header .intro p:nth-child(3) {
   margin: 10px auto;
   display: flex;
   flex-direction: column;
-  /* gap: 30px; */
 }
 .container h3{
   font-size: 2rem;
@@ -396,7 +399,6 @@ header .intro p:nth-child(3) {
 
 .row{
   padding: 2rem;
-  /* padding-bottom: 20px; */
   text-align: center;
 }
 
@@ -421,7 +423,6 @@ header .intro p:nth-child(3) {
   bottom: 15px;
 }
 .inner-progress{
-  /* width: 80%; */
   height: 100%;
   border-radius: 5px 50px 50px 5px;
   background-color: orange;
@@ -458,12 +459,18 @@ header .intro p:nth-child(3) {
 #python-progress{
   width: 60%;
 }
+#Github-progress{
+  width: 80%;
+}
+#Responsive-progress{
+  width: 90%;
+}
 /* End here --- */
 
 
 /* Project section -------------- > */
 .project-row{
-  gap: 25px;
+  gap: 30px;
 }
 .project-row a{
   overflow: hidden;
@@ -477,6 +484,9 @@ header .intro p:nth-child(3) {
   flex-direction: column;
   filter: grayscale(100%);
   transition: all 1s ease;
+  /* gap: 20px; */
+  /* box-shadow: 1px 1px 15px rgba(255, 255, 255, 0.08), -1px -1px 15px rgba(255, 255, 255, 0.01); */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6), -10px -10px 15px rgba(0, 0, 0, 0.6);
 }
 .Project-box:hover{
   overflow: hidden;
@@ -485,51 +495,44 @@ header .intro p:nth-child(3) {
   z-index: 33;
 }
 
+.Project-box-1{
+  background: url(Project-img/Band.png) center center/cover no-repeat; /*Done*/
+}
 .Project-box-2{
   flex-grow: 1;
-  background: url(Project-img/project-5.jpg) center/cover no-repeat;
+  background: url(Project-img/NetFlix.png) center/cover no-repeat;
 }
 .Project-box-3{
   flex-grow: 1;
-  background: url(Project-img/project-1.jpg) center/cover no-repeat; /*Done*/
+  background: url(Project-img/Portfolio.png) center/cover no-repeat; /*Done*/
+}
+.Project-box-4{
+  background: url(Project-img/FormValidation.png) center/cover no-repeat; /*Done*/
 }
 .Project-box-5{
   flex-grow: 1;
-  background: url(Project-img/project-6.jpg) center/cover no-repeat; /*Done*/
-}
-.Project-box-1{
-  background: url(Project-img/project-4.jpg) center/cover no-repeat; /*Done*/
-}
-.Project-box-4{
-  background: url(Project-img/project-2.jpg) center/cover no-repeat; /*Done*/
+  background: url(Project-img/TechCompany.png) center/cover no-repeat; /*Done*/
 }
 .Project-box-6{
-  background: url(Project-img/project-3.jpg) center/cover no-repeat; /*Done*/
+  background: url(Project-img/PlateForma.png) center/cover no-repeat; /*Done*/
 }
 
- 
+.MoreProjectBtn{
+  width: 200px;
+  margin-left: 5rem;
+}
 /*Form section starts from here  */
 .form-container{
   display: flex;
-  /* flex-direction: row; */
-
-}
-.Form-section{
-  /* height: 700px; */
-  /* border: 2px solid red; */
 }
 .Form-section .container .row h3 span{
   font-weight: 100;
 }
-
 .Form-boxs{
   padding: 5rem;
   padding-top: 2rem;
   display: flex;
   gap: 80px;
-  /* flex-wrap: wrap; */
-  /* height: 500px; */
-  /* width: 100%; */
 }
 
 .form-box-h2{
@@ -539,11 +542,8 @@ header .intro p:nth-child(3) {
 }
 
 .form-box{
-  /* background: yellowgreen; */
-  /* border: 2px solid yellowgreen; */
   width: 60%;
   padding: 1rem;
-  /* height: 100%; */
 }
 
 form button{
@@ -552,13 +552,11 @@ form button{
 }
 form div input, textarea{
   width: 100%;
-  /* height: 50px; */
   padding: 20px ;
   border-radius: 5px;
   border: none;
   outline: none;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1) !important;
-  /* background-color: var(--grey-Color); */
   background-color: var(--box-bgcolor);
   color: white;
   transition: all 0.5s ease;
@@ -570,7 +568,6 @@ form div input:focus, textarea:focus{
 ::placeholder{
   font-size: 20px;
   color: var(--secondary-Color);
-  /* margin-right: 10px; */
   padding: 5px;
 }
 
@@ -587,12 +584,36 @@ form div input:focus, textarea:focus{
   color: var(--secondary-Color);
 }
 
+.upArrow{
+  position: absolute;
+  right: 60px;
+  top: -40px;
+  animation: shakei 1s alternate infinite;
+  color: white;
+}
+.upArrow i{
+  font-size: 50px;
+  transition: all 0.8s ease;
+}
+.upArrow i:hover{
+  color: var(--buttonBG-color);
+  cursor: pointer;
+}
+
+@keyframes shakei {
+  0%{
+   top: -40px; 
+  }
+  100%{
+    top: 0px;
+  }
+}
+
 
 /* Footer ----------- ------------ -------- */
 footer{
+  position: relative;
   width: 100%;
-  /* height: 400px; */
-  /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -605,13 +626,12 @@ footer p{
   font-size: 1rem;
 }
 footer div{
-  /* width: 100%; */
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
 }
 footer div a i{
-  font-size: 30px;
+  font-size: 35px;
   color: white;
   cursor: pointer;
   transition: all 0.8s ease;
@@ -619,4 +639,5 @@ footer div a i{
 
 footer div a i:hover{
   transform: scale(1.5);
+  color: #008080;
 }
