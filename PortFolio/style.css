@@ -161,13 +161,13 @@ header {
   backdrop-filter: blur(35%);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.5),
-    0px 0px 10px rgba(255, 255, 255, 0.8);
+  box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.2),
+    -10px -10px 15px rgba(255, 255, 255, 0.2);
 }
 
 .open {
   display: block;
-  height: 350px;
+  height: 420px;
   animation-name: slowSpin;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
@@ -177,7 +177,7 @@ header {
     height: 0;
   }
   100%{
-    height: 350px;
+    height: 420px;
   }
 }
 
@@ -224,17 +224,20 @@ header .intro h2:hover {
 }
 
 /* My Resume section ---------- */
+/* My Resume section ---------- */
 .Resume-outer {
   padding: 5rem 0;
   text-align: center;
 }
-.heading{
+
+.heading {
   font-size: 3rem;
   font-family: "Roboto", sans-serif;
   font-weight: 200;
   color: white;
 }
-.heading span{
+
+.heading span {
   font-weight: 400;
 }
 
@@ -244,10 +247,8 @@ header .intro h2:hover {
   text-align: center;
   color: white;
   display: flex;
-  text-align: center;
   justify-content: center;
 }
-
 
 .Edu-Certi {
   max-width: 75%;
@@ -255,14 +256,14 @@ header .intro h2:hover {
   text-align: left;
   display: flex;
   flex-wrap: wrap;
-  gap: 24px; /* Add some gap between flex items */
+  gap: 20px; /* Add some gap between flex items */
 }
 
 .Edu-Certi .Education {
-  flex: 1 1 calc(50% - 24px); /* Make each .Education take up half the width minus the gap */
+  flex: 1 1 calc(50% - 20px); /* Make each .Education take up half the width minus the gap */
   display: flex;
   flex-direction: column;
-  gap: 24px; /* Add some gap between flex items */
+  gap: 20px; /* Add some gap between flex items */
 }
 
 .Education h2 {
@@ -270,15 +271,18 @@ header .intro h2:hover {
 }
 
 .Edu-Box {
-  /* flex: 1 1 100%; /* Make each box take full width within its container */
   border: 2px solid #fff;
   margin-bottom: 24px;
   display: flex;
+  max-width: 100%;
   flex-direction: column;
   gap: 15px;
   padding: 30px;
   border-radius: 10px;
   background-color: var(--box-bgcolor);  
+  flex: 1 1 calc(50% - 20px); 
+  box-sizing: border-box;
+
 }
 
 .Edu-Box span:last-child {
@@ -309,7 +313,7 @@ header .intro h2:hover {
   opacity: 0.4;
 }
 
-.hireMe{
+.hireMe {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -332,17 +336,11 @@ header .intro h2:hover {
   gap: 40px;
 }
 
-.aboutBox .about1 .aboutImg{
-  width: 450px;
-  height: 400px;
+.aboutBox .about1 img{
+  width: 400px;
+  height: 350px;
   border-radius: 15px;
-  /* background: url(Images/img6Grey.jpg) center center/cover no-repeat; */
-  background: url(Images/img6.jpg) center center/cover no-repeat;
   transition: all 1s ease-in-out;
-  filter: grayscale(100%);
-}
-.aboutBox .about1 .aboutImg:hover{
-  filter: grayscale(0%);
 }
 .aboutBox .about1{
   margin: 0px auto;
@@ -590,6 +588,7 @@ form div input:focus, textarea:focus{
   top: -40px;
   animation: shakei 1s alternate infinite;
   color: white;
+  /* display: inline-block; */
 }
 .upArrow i{
   font-size: 50px;
