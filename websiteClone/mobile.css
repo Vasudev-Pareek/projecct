@@ -1,0 +1,278 @@
+@media screen and (max-width: 991px) {
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: white;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+  h3 {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  span {
+    font-size: 0.7rem;
+  }
+
+  /* utility classes -------------->*/
+
+  .primary-Button {
+    padding: 6px 10px;
+    font-size: 1rem;
+  }
+
+  .secondary-button {
+    padding: 6px 10px;
+    font-size: 1rem;
+  }
+
+  .container {
+    padding: 0px 4rem;
+  }
+
+  /* other ----------> */
+
+  .hero-text {
+    margin-top: 100px;
+  }
+
+  .input-filled input {
+    padding: 10px;
+  }
+
+  .input-filled a {
+    line-height: 1;
+    font-size: 1rem;
+    width: 40%;
+    padding: 15px 8px;
+  }
+
+  /* stranger things section */
+
+  .Enjoy-Tv-Text {
+    width: 50%;
+    z-index: 999;
+    margin-left: 40px;
+  }
+
+  .download-img {
+    width: 200px;
+    /* height: 80%; */
+  }
+  .download-img img {
+    width: 300px;
+    /* height: 80%; */
+  }
+
+  .inner-download-img {
+    /* z-index: 999; */
+    width: 200px;
+    bottom: 90px;
+  }
+
+  .inner-download-img p {
+    font-size: 0.5rem;
+  }
+
+  /* footer -------- */
+  .footer-opt ul li{
+    /* width: 10rem; */
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+    /* Empty for next session */
+}
+
+
+@media screen and (max-width: 470px) {
+  h1 {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: white;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+    font-weight: 900;
+  }
+  h3 {
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 0.7rem;
+    font-weight: 400;
+  }
+
+  span {
+    font-size: 0.7rem;
+  }
+
+  /* utility clases */
+
+  .container{
+    padding: 10px 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .primary-Button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .secondary-button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  /* other classes */
+
+
+  /* header */
+  /* .header{
+    height: 43vh;
+  } */
+  header {
+    height: 45vh;
+
+  }
+  .hero-text {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    gap: 9px;
+  }
+
+  .netflix-logo img {
+    width: 90px;
+  }
+  .navbar-side {
+    gap: 10px;
+  }
+
+  /* hero section */
+
+  .input-filled{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .input-filled input {
+    border: var(--border);
+    font-size: 0.8rem;
+    width: 80%;
+    padding: 10px;
+  }
+
+  .input-filled a {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  /* enjoy container */
+  .Enjoy-Tv-container{
+    flex-direction: column;
+    gap: 10px;
+    /* padding: 25px; */
+  }
+
+  .Enjoy-Tv-Text{
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin-left: 10px;
+    padding: 15px;
+}
+
+  .Enjoy-Tv-img-fixed  {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+  .Enjoy-Tv-img-fixed  img{
+    width: 70%;
+    height: 70%;
+  }
+
+
+/* Stranger Things --- container2*/
+.download-img{
+ /* justify-content: center;
+  text-align: center;  */
+  width: 100%;
+}
+
+
+
+.inner-download-img{
+  gap: 20px;
+  padding: 10px;
+  border: 2px solid rgba(128, 128, 128, 0.7);
+  border-radius: 10px;
+  position: absolute;
+  bottom: 10px;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  width: 60vw;
+}
+
+#boxshot-img{
+  width: 9vw;
+}
+
+#download-gif{
+  width: 9vw;
+}
+
+/* FAQ Section */
+
+.question-card{
+  width: 80vw;
+}
+
+/* Footer -----------> */
+
+
+.footer-opt ul{
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.question-call span{
+  font-size: 0.8rem;
+  color: var(--next-color);
+  text-decoration: underline;
+}
+.question-call p{
+  font-size: 1rem;
+}
+
+.footer-opt ul li{
+  width: 30vw;
+  /* gap: 20px; */
+}
+.footer-opt ul li a{
+  /* width: 100%?; */
+}
+.footer-opt{
+  /* width: 80vw; */
+  /* font-size: 0.7rem !important; */
+}
+}
