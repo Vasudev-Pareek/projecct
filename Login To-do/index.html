@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO DO list</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-section">
+        <h1 class="Alternate-H1">Save Your Task</h1>
+        <form action="#">
+          <div>
+            <label for="title" class="Labels">Title</label>
+            <input type="text" id="title" name="title" />
+          </div>
+          <div>
+            <label for="Task" class="Labels">Explain Your Task</label>
+            <!-- <input type="text" id="Task" name="Task"> -->
+            <textarea name="Task" id="Task" rows="20"></textarea>
+          </div>
+        </form>
+        <div class="buttons">
+          <div class="left-Buttons button">
+            <!-- <button class="btn workbtn">Highlight</button>
+          <input type="color" /> -->
+          </div>
+          <div class="left-Buttons button">
+            <!-- <button class="btn" id="Demo">Demo-log</button> -->
+            <button class="btn workbtn" id="SHowBox">showBox</button>
+            <button class="btn workbtn" id="Submit">Submit</button>
+            <button class="btn workbtn" id="Story">Story</button>
+            <button class="btn workbtn" id="Show-Hide">Hide All</button>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <!-- To Do list -->
+      <div class="Todo-container">
+        <div id="Todo"></div>
+      </div>
+
+      <!-- Pop up container That shows the pop box with details -->
+      <div id="popUp-container">
+        <span id="CloseBtn"><button class="btn workbtn">Close</button></span>
+        <div id="Pop-Minijs"></div>
+      </div>
+    </div>
+
+    <!-- login page ------------------------- > -->
+    <!-- sign up form -->
+    <section class="Main-login" id="Main-login-display">
+      <section class="login-container">
+        <div class="Circle-parent">
+          <div class="circle circle1"><div class="circleBorder"></div></div>
+          <span>Anywhere app</span>
+        </div>
+        <!-- sign - up -->
+        <div class="Form-container" id="SignUp-page">
+          <div class="form-text">
+            <span class="blurSpan">START FOR FREE </span>
+            <h1>
+              Create new account
+              <div class="circle circle2"><div class="circleBorder"></div></div>
+            </h1>
+            <span class="blurSpan"
+              >Already A Member?
+              <span class="login-switch" id="Go-login">Log in</span></span
+            >
+          </div>
+          <form action="#">
+            <div class="name-inputs">
+              <input type="text" class="inputs" placeholder="First name" id="FirstName"/>
+              <input type="text" class="inputs" placeholder="Last name" id="LastName"/>
+            </div>
+            <div class="EmailPassword">
+              <input type="text" class="inputs" placeholder="Email" id="SignUp-Email" />
+              <input type="text" class="inputs" placeholder="Password" id="SignUp-Password"/>
+            </div>
+            <div class="login-buttons">
+              <button id="SignUp-btn1">Log In</button>
+              <button id="SignUp-btn2">Create account</button>
+            </div>
+          </form>
+          
+          <p id="signupError" class="TextForMesage"></p>
+        </div>
+
+          <!-- login -->
+          <div class="Form-container" id="Login-page">
+            <div class="form-text">
+              <span class="blurSpan">WELCOME BACK !!</span>
+              <h1>
+                Login Existing account
+                <div class="circle circle2">
+                  <div class="circleBorder"></div>
+                </div>
+              </h1>
+              <span class="blurSpan"
+                >Not Have any account?
+                <span class="login-switch" id="Go-SignUp">Sign Up</span></span
+              >
+            </div>
+            <form action="#">
+              <div class="EmailPassword">
+                <input
+                  type="email"
+                  class="inputs"
+                  placeholder="Email"
+                  id="Login-Email"
+                />
+                <input
+                  type="password"
+                  class="inputs"
+                  placeholder="Password"
+                  id="Login-Password"
+                />
+              </div>
+              <div class="login-buttons">
+                <button id="login-btn1" class="login-new1">Log In</button>
+                <button id="login-btn2">Create account</button>
+              </div>
+            </form>
+            <p id="LoginError" class="TextForMesage"></p>
+          </div>
+
+      </section>
+    </section>
+
+    <script
+      src="https://kit.fontawesome.com/428748ad61.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+    <!-- <script src="script2.js"></script> -->
+  </body>
+</html>
