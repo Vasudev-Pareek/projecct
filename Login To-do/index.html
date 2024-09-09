@@ -5,9 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TO DO list</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mobile.css" />
   </head>
   <body>
-    <div class="container">
+    <section class="container">
+      <!-- profile section -->
+      <section class="Profile-section">
+        <nav class="navbar">
+          <div class="image-box">
+            <img src="Images/Right-sign-modified.png" alt="" />
+            <span class="Dashboard">Dashboard</span>
+          </div>
+          <div class="image-box">
+            <!-- <img src="gifs/giphy.webp" alt="" id="First-profile" class="Profile-imgs"> -->
+            <img
+              src="gifs/todo-gif2.gif"
+              alt=""
+              id="First-profile"
+              class="Profile-imgs"
+            />
+          </div>
+        </nav>
+        <div class="navbar-right" id="Profile-none">
+          <div class="profile-box-right">
+            <div class="Profile-img-center">
+              <!-- <img src="gifs/giphy.gif" alt="" id="second-profile" class="Profile-imgs"> -->
+              <img
+                src="gifs/todo-gif2.gif"
+                alt=""
+                id="second-profile"
+                class="Profile-imgs"
+              />
+              <p id="profile-Name">Gust</p>
+            </div>
+            <i class="fa-solid fa-xmark" id="cross-button"></i>
+          </div>
+          <hr />
+          <div class="profile-box-body">
+            <div class="ImgUpload-box">
+              <p>Image upload</p>
+              <input type="file" id="Image-Upload" />
+            </div>
+            <button id="Sign-out">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign out
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Form section -->
       <div class="form-section">
         <h1 class="Alternate-H1">Save Your Task</h1>
         <form action="#">
@@ -17,17 +63,11 @@
           </div>
           <div>
             <label for="Task" class="Labels">Explain Your Task</label>
-            <!-- <input type="text" id="Task" name="Task"> -->
             <textarea name="Task" id="Task" rows="20"></textarea>
           </div>
         </form>
         <div class="buttons">
           <div class="left-Buttons button">
-            <!-- <button class="btn workbtn">Highlight</button>
-          <input type="color" /> -->
-          </div>
-          <div class="left-Buttons button">
-            <!-- <button class="btn" id="Demo">Demo-log</button> -->
             <button class="btn workbtn" id="SHowBox">showBox</button>
             <button class="btn workbtn" id="Submit">Submit</button>
             <button class="btn workbtn" id="Story">Story</button>
@@ -46,7 +86,7 @@
         <span id="CloseBtn"><button class="btn workbtn">Close</button></span>
         <div id="Pop-Minijs"></div>
       </div>
-    </div>
+    </section>
 
     <!-- login page ------------------------- > -->
     <!-- sign up form -->
@@ -60,10 +100,10 @@
         <div class="Form-container" id="SignUp-page">
           <div class="form-text">
             <span class="blurSpan">START FOR FREE </span>
-            <h1>
+            <h2>
               Create new account
               <div class="circle circle2"><div class="circleBorder"></div></div>
-            </h1>
+            </h2>
             <span class="blurSpan"
               >Already A Member?
               <span class="login-switch" id="Go-login">Log in</span></span
@@ -71,60 +111,79 @@
           </div>
           <form action="#">
             <div class="name-inputs">
-              <input type="text" class="inputs" placeholder="First name" id="FirstName"/>
-              <input type="text" class="inputs" placeholder="Last name" id="LastName"/>
+              <input
+                type="text"
+                class="inputs"
+                placeholder="First name"
+                id="FirstName"
+              />
+              <input
+                type="text"
+                class="inputs"
+                placeholder="Last name"
+                id="LastName"
+              />
             </div>
             <div class="EmailPassword">
-              <input type="text" class="inputs" placeholder="Email" id="SignUp-Email" />
-              <input type="text" class="inputs" placeholder="Password" id="SignUp-Password"/>
+              <input
+                type="email"
+                class="inputs"
+                placeholder="Email"
+                id="SignUp-Email"
+              />
+              <input
+                type="password"
+                class="inputs"
+                placeholder="Password"
+                id="SignUp-Password"
+              />
             </div>
             <div class="login-buttons">
               <button id="SignUp-btn1">Log In</button>
               <button id="SignUp-btn2">Create account</button>
             </div>
           </form>
-          
+
           <p id="signupError" class="TextForMesage"></p>
         </div>
 
-          <!-- login -->
-          <div class="Form-container" id="Login-page">
-            <div class="form-text">
-              <span class="blurSpan">WELCOME BACK !!</span>
-              <h1>
-                Login Existing account
-                <div class="circle circle2">
-                  <div class="circleBorder"></div>
-                </div>
-              </h1>
-              <span class="blurSpan"
-                >Not Have any account?
-                <span class="login-switch" id="Go-SignUp">Sign Up</span></span
-              >
-            </div>
-            <form action="#">
-              <div class="EmailPassword">
-                <input
-                  type="email"
-                  class="inputs"
-                  placeholder="Email"
-                  id="Login-Email"
-                />
-                <input
-                  type="password"
-                  class="inputs"
-                  placeholder="Password"
-                  id="Login-Password"
-                />
+        <!-- login -->
+        <div class="Form-container" id="Login-page">
+          <div class="form-text">
+            <span class="blurSpan">WELCOME BACK !!</span>
+            <h2>
+              Login Existing account
+              <div class="circle circle2">
+                <div class="circleBorder"></div>
               </div>
-              <div class="login-buttons">
-                <button id="login-btn1" class="login-new1">Log In</button>
-                <button id="login-btn2">Create account</button>
-              </div>
-            </form>
-            <p id="LoginError" class="TextForMesage"></p>
+            </h2>
+            <span class="blurSpan"
+              >Not Have any account?
+              <span class="login-switch" id="Go-SignUp">Sign Up</span></span
+            >
           </div>
-
+          <form action="#">
+            <div class="EmailPassword">
+              <input
+                type="email"
+                class="inputs"
+                placeholder="Email"
+                id="Login-Email"
+              />
+              <input
+                type="password"
+                class="inputs"
+                placeholder="Password"
+                id="Login-Password"
+              />
+            </div>
+            <div class="login-buttons">
+              <button id="login-btn1" class="login-new1">Log In</button>
+              <button id="login-btn2">Create account</button>
+            </div>
+          </form>
+          <p id="LoginError" class="TextForMesage"></p>
+        </div>
       </section>
     </section>
 
@@ -133,6 +192,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="script.js"></script>
-    <!-- <script src="script2.js"></script> -->
   </body>
 </html>

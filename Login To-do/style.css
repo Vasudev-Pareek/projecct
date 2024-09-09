@@ -6,9 +6,7 @@
 }
 body{
     position: relative;
-   overflow-y: hidden;  
-   /*   uncomment when You are on login page.
-    */
+   /* overflow-y: hidden;   */
 }
 :root{
     --primary-text:red;
@@ -29,11 +27,173 @@ li{
     padding-block: 0px 3rem;
     position: relative;
     background: linear-gradient(135deg, #f3e7e9 0%, #e3eeff 100%);
+    display: none;
+}
+
+/* Profile section start from here -------> */
+.navbar{
+    width: 100%;
+    height: 80px;
+    background-color: transparent;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 50px;
+    background: linear-gradient(135deg, #6c3463 0%, #e3eeff 100%);
+}
+.image-box{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.image-box img{
+    width: 40px;
+    cursor: pointer;
+}
+.image-box img:hover{
+    transition: 2s ease;
+    transform: rotate(360deg);
+}
+
+.Dashboard{
+    font-size: 20px;
+    font-weight: 600;
+}
+#First-profile{
+    width: 50px;
+    height: 50px;
+}
+.Profile-imgs{
+    border-radius: 50%;
+}
+
+.Slow-animate{
+    animation: animate 1s infinite;
+}
+
+@keyframes animate {
+    0%{
+        width: 0px;
+    }
+    100%{
+        width: 400px;
+    }
+}
+
+/* Floting navbar ---------------*/
+.navbar-right{
+    display: none;
+    position: absolute;
+    width: 0px;
+    background-color: var(--grey-color);
+    right: 0px;
+    top: 0px;
+    padding: 40px 20px;
+    border-end-end-radius: 20px ;
+    border-end-start-radius: 20px ;
+    overflow-x: hidden;
+}
+.Slow-animate{
+    animation: animate 0.5s linear 1;
+    width: 400px;
+}
+
+@keyframes animate {
+    0%{
+        width: 0px;
+    }
+    100%{
+        width: 400px;
+    }
+}
+
+.profile-box-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+#X-button{
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+}
+.Profile-img-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px auto;
+    gap: 10px;
+}
+
+#cross-button{
+    font-size: 18px;
+    cursor: pointer;
+    padding: 8px 10px;
+    transition: all 0.8s ease-in-out;
+    border-radius: 8px;
+    position: absolute;
+    right: 30px;
+    top: 25px;
+    border: 1px solid black;
+}
+#cross-button:hover{
+    color: white;
+    background-color: #6c3463;
+    border: 1px solid #6c3463;
+    transition: 2s ease;
+    transform: rotate(360deg);
+}
+.ImgUpload-box{
+    margin: 30px 0px;
+}
+.ImgUpload-box p{
+    margin-bottom: 10px;
+}
+.ImgUpload-box input[type="file"]{
+    color: red;
+    padding: 10px;
+    cursor: pointer;
+}
+#second-profile{
+    width: 200px;
+    height: 180px;
+}
+#profile-Name{
+    font-size: 25px;
+    font-family: "Moderustic", sans-serif;
+    font-weight: bold;
+}
+
+#Sign-out{
+    font-size: 20px;
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+    text-align: start;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.5s ease-in-out;
 
 }
+#Sign-out:hover{
+    background: rgba(255, 255, 255, 0.541);
+}
+#Sign-out i{
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+
+/* Form section start form here ----------> */
 .form-section{
-    padding: 50px;
-    margin-bottom: 20px;
+    padding-inline: 50px;
+    margin-block: 10px 20px;
 }
 
 .form-section h1{
@@ -69,7 +229,6 @@ form div textarea:focus, input:focus{
     border-color: var(--focus-border-color);
 }
 .Labels{
-    /* color: var(--secondary-color); */
     color: var(--label-color-primary);
 }
 form div textarea{
@@ -83,10 +242,14 @@ form div input{
     gap: 20px;
     margin-top: 30px;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .form-section .buttons .button{
     display: flex;
     gap: 60px;
+}
+.left-Buttons{
+    flex-wrap: wrap;
 }
 .btn{
     padding: 0.6rem 1.3rem;
@@ -116,7 +279,6 @@ form div input{
 }
 /* todo container */
 .Todo-container{
-    /* border: 2px solid red; */
     height: 400px;
     margin-top: 10px;
     padding-inline: 50px 120px;
@@ -162,8 +324,8 @@ form div input{
 }
 /* end here (js classes) */
 
-/* Pop up design */
 
+/* Pop up design */
 #popUp-container{
     width: 70vw;
     height: 600px;
@@ -188,7 +350,6 @@ form div input{
     color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-between;
-    /* gap: 60px; */
     border-bottom: 2px solid red;
     border-right: 2px solid red;
 }
@@ -203,8 +364,6 @@ form div input{
  margin: 0px 0px 10px 10px ;
  display: block;
  letter-spacing: 2px;
- /* text-decoration: underline ; */
- /* margin-bottom: 10px; */
 }
 #PopUp-title{
     width: 30%;
@@ -246,7 +405,6 @@ form div input{
     /* display: none; */
 }
 .login-container{
-    /* scrol */
     width: 80%;
     height: 95%;
     margin: auto;
@@ -266,7 +424,7 @@ form div input{
     display: flex;
     flex-direction: column;
     gap: 30px;
-    width: 700px;
+    width: 70vw;
     opacity: 1;
     transition: opacity 0.5s ease, visibility 0.5s ease;
 }
@@ -281,10 +439,15 @@ form div input{
 /* ----------------------------------- Ends here > */
 
 .Form-container form{
+    display: flex;
+    flex-wrap: wrap;
     width: 450px;
 }
 .Form-container .form-text{
- line-height: 1.7;
+ line-height: 1.9;
+}
+#Login-page .form-text{
+    line-height: 1.9;
 }
 .Form-container .form-text h1{
  font-size: 50px;
@@ -300,6 +463,7 @@ form div input{
 }
 .name-inputs input{
     width: 50%;
+    min-width: 220px;
 }
 .login-buttons{
     display: flex;
@@ -310,7 +474,7 @@ form div input{
 .login-buttons button{
     display: inline-block;
     width: 48%;
-    padding: 1rem 1rem;
+    padding: 0.4rem 1rem;
     border-radius: 30px;
     outline: none;
     border: none;
@@ -323,6 +487,9 @@ form div input{
 #Login-page{
     display: none;
 }
+/* #SignUp-page{
+    display: none;
+} */
 
 #SignUp-btn1, #SignUp-btn2:hover, #SignUp-btn1:hover ~ #SignUp-btn2 {
     background-color: var(--login-buttonBg-color-secondary);
@@ -422,14 +589,7 @@ form div input{
 
 /* message h2  */
 .TextForMesage{
-    color:  red;
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: 17px;
     letter-spacing: 2px;
 }
-/* #signupError{
-
-}
-#loginError{
-
-} */

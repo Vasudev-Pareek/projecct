@@ -26,41 +26,43 @@ let signupError = document.getElementById("signupError");
 let LoginError = document.getElementById("LoginError");
 let MainloginDisplay = document.getElementById("Main-login-display");
 
-
 // // Load tasks from local storage when the page loads.
 // loadTasks();
+// ProfileShow();
 
-Submit.addEventListener("click", (e) => {
-  e.preventDefault();
-  const title = Title.value.trim();
-  const task = Task.value.trim();
+if (Submit) {
+  Submit.addEventListener("click", (e) => {
+    e.preventDefault();
+    const title = Title.value.trim();
+    const task = Task.value.trim();
 
-  if (title && task) {
-    const newTask = {
-      id: Date.now(), // Unique ID based on timestamp.
-      title: title,
-      task: task,
-    };
+    if (title && task) {
+      const newTask = {
+        id: Date.now(), // Unique ID based on timestamp.
+        title: title,
+        task: task,
+      };
 
-    // Additems(title, task);
+      // Additems(title, task);
 
-    //     // Get existing tasks from local storage.
-    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+      //     // Get existing tasks from local storage.
+      const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-    //     // Add the new task to the tasks array.
-    tasks.push(newTask);
+      //     // Add the new task to the tasks array.
+      tasks.push(newTask);
 
-    //     // Save updated tasks to local storage.
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+      //     // Save updated tasks to local storage.
+      localStorage.setItem("tasks", JSON.stringify(tasks));
 
-    //     // Display the new task.
-    displayTask(newTask);
+      //     // Display the new task.
+      displayTask(newTask);
 
-    //     // Clear the input fields
-    Title.value = "";
-    Task.value = "";
-  }
-});
+      //     // Clear the input fields
+      Title.value = "";
+      Task.value = "";
+    }
+  });
+}
 
 // Show all local storage data in html
 ShowStory.addEventListener("click", () => {
@@ -171,75 +173,92 @@ function Additems(value1, value2) {
 }
 
 // This code is for login form --- for changing color of log in buttons
-SignUpButton2.addEventListener("mouseover", () => {
-  SignUpButton1.style.backgroundColor = "#007BFF";
-});
+if (SignUpButton2) {
+  SignUpButton2.addEventListener("mouseover", () => {
+    SignUpButton1.style.backgroundColor = "#007BFF";
+  });
+}
 
-SignUpButton2.addEventListener("mouseout", () => {
-  SignUpButton1.style.backgroundColor = "rgba(80, 78, 78, 0.696)";
-});
+if (SignUpButton2) {
+  SignUpButton2.addEventListener("mouseout", () => {
+    SignUpButton1.style.backgroundColor = "rgba(80, 78, 78, 0.696)";
+  });
+}
 
-LoginButton2.addEventListener("mouseover", () => {
-  LoginButton1.style.backgroundColor = "rgba(80, 78, 78, 0.696)";
-});
+if (LoginButton2) {
+  LoginButton2.addEventListener("mouseover", () => {
+    LoginButton1.style.backgroundColor = "rgba(80, 78, 78, 0.696)";
+  });
+}
 
-LoginButton2.addEventListener("mouseout", () => {
-
-  LoginButton1.style.backgroundColor = "#007BFF";
-});
+if (LoginButton2) {
+  LoginButton2.addEventListener("mouseout", () => {
+    LoginButton1.style.backgroundColor = "#007BFF";
+  });
+}
 
 // Page changing ---> login to sign up   --------------------------------->
-GoLogin.addEventListener("click", () => {
-  LoginPage.classList.add("hide");
-  setTimeout(() => {
-    SignUpPage.style.display = "none";
-    LoginPage.style.display = "flex";
+if (GoLogin) {
+  GoLogin.addEventListener("click", () => {
+    LoginPage.classList.add("hide");
     setTimeout(() => {
-      LoginPage.classList.remove("hide");
-    }, 20);
-  }, 500);
-});
+      SignUpPage.style.display = "none";
+      LoginPage.style.display = "flex";
+      setTimeout(() => {
+        LoginPage.classList.remove("hide");
+      }, 20);
+    }, 500);
+  });
+}
 
-// using log in button 
-SignUpButton1.addEventListener("click", () => {
-  LoginPage.classList.add("hide");
-  setTimeout(() => {
-    SignUpPage.style.display = "none";
-    LoginPage.style.display = "flex";
+// using log in button
+if (SignUpButton1) {
+  SignUpButton1.addEventListener("click", () => {
+    LoginPage.classList.add("hide");
     setTimeout(() => {
-      LoginPage.classList.remove("hide");
-    }, 20);
-  }, 500);
-});
+      SignUpPage.style.display = "none";
+      LoginPage.style.display = "flex";
+      setTimeout(() => {
+        LoginPage.classList.remove("hide");
+      }, 20);
+    }, 500);
+  });
+}
 
 // Page changing ---> sign up to log in  --------------------------------->
-GoSignUp.addEventListener("click", () => {
-  LoginPage.classList.add("hide");
-  setTimeout(() => {
-    LoginPage.style.display = "none";
-    SignUpPage.style.display = "flex";
+if (GoSignUp) {
+  GoSignUp.addEventListener("click", () => {
+    LoginPage.classList.add("hide");
     setTimeout(() => {
-      LoginPage.classList.remove("hide");
-    }, 20);
-  }, 500);
-});
+      LoginPage.style.display = "none";
+      SignUpPage.style.display = "flex";
+      setTimeout(() => {
+        LoginPage.classList.remove("hide");
+      }, 20);
+    }, 500);
+  });
+}
 // using create account button ---->
-LoginButton2.addEventListener("click", () => {
-  LoginPage.classList.add("hide");
-  setTimeout(() => {
-    LoginPage.style.display = "none";
-    SignUpPage.style.display = "flex";
+if (LoginButton2) {
+  LoginButton2.addEventListener("click", () => {
+    LoginPage.classList.add("hide");
     setTimeout(() => {
-      LoginPage.classList.remove("hide");
-    }, 20);
-  }, 500);
-});
+      LoginPage.style.display = "none";
+      SignUpPage.style.display = "flex";
+      setTimeout(() => {
+        LoginPage.classList.remove("hide");
+      }, 20);
+    }, 500);
+  });
+}
 // ----------------------------------------Ends here>
 
 // Sign Up Form values ------------------------>
-SignUpButton2.addEventListener("click", () => {
-  SignUpInfo();
-});
+if (SignUpButton2) {
+  SignUpButton2.addEventListener("click", () => {
+    SignUpInfo();
+  });
+}
 
 function SignUpInfo() {
   const firstname = FirstName.value.trim();
@@ -257,7 +276,7 @@ function SignUpInfo() {
 
   const data = JSON.parse(localStorage.getItem(email));
 
-  if(data === null){
+  if (data === null) {
     localStorage.setItem(email, JSON.stringify(info));
     console.log("congrets You have now account, please log in");
     signupError.innerHTML = `<i class="fa-solid fa-circle-check"></i> &nbsp Congrets !! account created successfully, Please Log in. `;
@@ -265,9 +284,8 @@ function SignUpInfo() {
     setTimeout(() => {
       signupError.innerHTML = "";
     }, 3000);
-    
-  }else{
-    console.log("You already have account, Please login")
+  } else {
+    console.log("You already have account, Please login");
     signupError.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> &nbsp Error !! You already have an account, Please login`;
     signupError.style.color = "red";
     setTimeout(() => {
@@ -276,39 +294,113 @@ function SignUpInfo() {
   }
 }
 
-
 // login form values ------------------------------>
-LoginButton1.addEventListener("click", () => {
-  const email = LoginEmail.value.trim();
-  const password = LoginPassword.value.trim();
+if (LoginButton1) {
+  LoginButton1.addEventListener("click", () => {
+    const email = LoginEmail.value.trim();
+    const password = LoginPassword.value.trim();
 
-  const data = JSON.parse(localStorage.getItem(email));
+    const data = JSON.parse(localStorage.getItem(email));
+    console.log(data);
+    
+    if (data !== null) {
+      if (password == data.password) {
+        LoginError.innerHTML = `<i class="fa-solid fa-circle-check"></i> &nbsp Success !! You are good to Go`;
+        LoginError.style.color = "green";
+        setTimeout(() => {
+          LoginError.innerHTML = "";
+        }, 3000);
 
-  if(data !== null){
-    if(password == data.password){
-      // window.location.replace("Todo.html")
-      LoginError.innerHTML = `<i class="fa-solid fa-circle-check"></i> &nbsp Success !! You are good to Go`;
-      LoginError.style.color = "green";
-      setTimeout(() => {
-        LoginError.innerHTML = "";
-      }, 3000);
-
-      // something code is here --->
-      MainloginDisplay.style.display = "none";
-      document.body.style.overflowY = "auto";
-    }else{
-      LoginError.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> &nbsp Error !! incorrect password`;
+        // something code is here --->
+        setTimeout(() => {          
+          MainloginDisplay.style.display = "none";
+          document.body.style.overflowY = "auto";
+        }, 1000);
+        SetUserName(data.firstname, data.lastname);
+      } else {
+        LoginError.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> &nbsp Error !! incorrect password`;
+        LoginError.style.color = "red";
+        setTimeout(() => {
+          LoginError.innerHTML = "";
+        }, 3000);
+      }
+    } else {
+      LoginError.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> &nbsp Error !! Please Create Your account`;
       LoginError.style.color = "red";
       setTimeout(() => {
         LoginError.innerHTML = "";
       }, 3000);
     }
-  }else{
-    LoginError.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> &nbsp Error !! Please Create Your account`;
-    LoginError.style.color = "red";
-    setTimeout(() => {
-      LoginError.innerHTML = "";
-    }, 3000);
-  }
+  });
+}
+
+// Profile Image upload ------------>
+let ProfileImgs = document.querySelectorAll(".Profile-imgs");
+let ImageUpload = document.getElementById("Image-Upload");
+let CrossButton = document.getElementById("cross-button");
+let ProfileNone = document.getElementById("Profile-none");
+let FirstProfile = document.getElementById("First-profile");
+let SignOut = document.getElementById("Sign-out");
+let ProfileName = document.getElementById("profile-Name");
+
+ImageUpload.onchange = function () {
+  ProfileImgs.forEach((ele) => {
+    ele.src = URL.createObjectURL(ImageUpload.files[0]);
+    localStorage.setItem("profile", JSON.stringify(ele.src));
+  });
+};
+
+CrossButton.addEventListener("click", () => {
+  ProfileNone.style.display = "none";
 });
+
+FirstProfile.addEventListener("click", () => {
+  ProfileNone.style.display = "block";
+  ProfileNone.classList.add("Slow-animate")
+});
+
+SignOut.addEventListener("click", () => {
+  MainloginDisplay.style.display = "block";
+  document.body.style.overflowY = "hidden";
+  ProfileNone.style.display = "none";
+});
+
+
+// Add user name at profile
+function SetUserName(firstname, lastname){
+  ProfileName.innerText = `${firstname} ${lastname} `;
+}
+
+// Function to show the profile image stored in localStorage6
+function ProfileShow() {
+  let ProfileImg = localStorage.getItem("profile"); // Retrieve the stored image
+  if (ProfileImg) {
+    ProfileImgs.forEach((ele) => {
+      ele.src = ProfileImg; // Set the src to the stored image
+    });
+  }
+}
+
+// Function to convert image to base64
+function getBase64(file, callback) {
+  let reader = new FileReader();
+  reader.onload = function () {
+    callback(reader.result); // The result is a base64 encoded string
+  };
+  reader.readAsDataURL(file);
+}
+
+// Event listener for image upload
+ImageUpload.onchange = function () {
+  let file = ImageUpload.files[0];
+  getBase64(file, function (base64Image) {
+    ProfileImgs.forEach((ele) => {
+      ele.src = base64Image; // Display the selected image
+    });
+    localStorage.setItem("profile", base64Image); // Store the base64 image in localStorage
+  });
+};
+
+// Call the function to show the image on page load
+ProfileShow();
 
