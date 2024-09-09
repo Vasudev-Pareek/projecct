@@ -27,7 +27,7 @@ li{
     padding-block: 0px 3rem;
     position: relative;
     background: linear-gradient(135deg, #f3e7e9 0%, #e3eeff 100%);
-    display: none;
+    /* display: none; */
 }
 
 /* Profile section start from here -------> */
